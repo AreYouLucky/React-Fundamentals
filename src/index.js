@@ -2,25 +2,42 @@ import React from 'react'
 import ReactDom from 'react-dom/client'
 import './index.css'
 
-const author = 'Kristin Hannah'
-const title = 'The Women: A Novel'
+const firstBook = {
+  author: 'Kristin Hannah',
+  title: 'The Women: A Novel',
+  img: 'https://m.media-amazon.com/images/I/913C+MR3S5L._AC_UL320_.jpg',
+}
+
+const secondBook = {
+  author: 'Ina Garten',
+  title: 'Be Ready When the Luck Happens: A Memoir',
+  img: 'https://m.media-amazon.com/images/I/81g+Hs6XF5L._SL1500_.jpg',
+}
 
 const BookList = () => {
   return (
     <section className="booklist">
-      <Book author={author} title={title}></Book>
-      <Book author={author} title={title}></Book>
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      ></Book>
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      ></Book>
     </section>
   )
 }
 
 const Book = (props) => {
-  console.log(props)
+  const { img, title, author } = props
   return (
     <article className="book">
-      <img src="https://m.media-amazon.com/images/I/913C+MR3S5L._AC_UL320_.jpg"></img>
-      <h3>{props.title}</h3>
-      <span style={authorStyle}>by: {props.author}</span>
+      <img src={img}></img>
+      <h3>{title}</h3>
+      <span style={authorStyle}>by: {author}</span>
     </article>
   )
 }
