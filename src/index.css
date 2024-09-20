@@ -1,0 +1,46 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(219, 219, 219);
+}
+
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+.book {
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  grid-template-columns: repeat(2, 1fr);
+}
+.book img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.book:hover {
+  transform: scale(1.03);
+  transition: all 0.3s ease-out;
+}
+@media (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr); /* Medium screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .booklist {
+    grid-template-columns: repeat(4, 1fr); /* Large screens */
+  }
+}
